@@ -1,0 +1,3 @@
+## Golang-libinjection
+
+This is just a simple golang wrapper around the [libinjection](https://github.com/client9/libinjection) library.
