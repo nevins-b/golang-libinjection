@@ -1,8 +1,7 @@
 package libinjection
 
 /*
-#cgo CFLAGS: -I./libinjection
-#cgo LDFLAGS: -L./libinjection -linjection
+#cgo LDFLAGS: -linjection
 #include "libinjection.h"
 #include "libinjection_sqli.h"
 */
@@ -22,7 +21,7 @@ func IsSQLi(statement string) (bool, string) {
 	return false, ""
 }
 
-func IsXXS(input string) bool {
+func IsXSS(input string) bool {
 	if found := C.libinjection_xss(C.CString(input), C.size_t(len(input))); found == 1 {
 		return true
 	}

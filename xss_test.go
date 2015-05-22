@@ -9,6 +9,6 @@ import (
 
 func Test_XSS_1(t *testing.T) {
 	in, _ := url.QueryUnescape("<scr%00ipt>confirm(0);</scr%00ipt>")
-	found := IsXXS(in)
+	found := IsXSS(in)
 	assert.True(t, found)
 }
